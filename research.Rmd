@@ -1,0 +1,61 @@
+---
+title: "Research in DLMs"
+author: "Logan Harris"
+date: "`r Sys.Date()`"
+output:
+  rmdformats::material:
+    highlight: kate
+fontsize: 20pt
+---
+
+```{r setup, include=FALSE}
+library(knitr)
+library(rmdformats)
+
+## Global options
+options(max.print="75")
+opts_chunk$set(echo=TRUE,
+	             cache=FALSE,
+               tidy=TRUE,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE,
+               comment="#", 
+               collapse = TRUE,
+               fig.align = "center")
+opts_knit$set(width=75)
+
+options(htmltools.dir.version = FALSE)
+```
+
+# Meeting Notes
+
+## Week of Monday, February 20th
+
+1. “Smoothing Splines and the Kalman Smoother” – We see this as a good starting point for a potential next phase of analyzing HR data. First, to implement it \ as done in Shumway and Stoffer then to consider extensions in determing estimating v_t and w_t (or their ratio) and (hopefully) culminating in an extension that allows us to capture heteroscedasticity using something like GARCH or SVM but model the parts jointly.
+    a. Read section 6.5 (“Smoothing Splines and the Kalman Smoother”)
+    b. Implement initial analysis on HR data
+    c. Start thinking about how to extend details in 6.5.
+    d. Section 6.6 in Shumway and Stoffer covers “an example that shows how to fit a sum of trend, seasonal, and irregular components” which I think may be informative for my understanding of how to build up models. So I will put this on my “to read” list.
+2. Keep reading through Bayesian DLM book with a particular focus on:
+    a. Models similar to that described in (1)
+    b. Multivariate structural models
+3. Review MIMIC III data from PhysioNet – Get an idea of what type of usable time series / multivariate time series are available, how many patients map back to clinical records, at what frequency they were recorded, etc.
+
+# Progress Notes
+
+## Week of Monday, February 20th
+
+1. Implemented Kalman smoother from section 6.5 of Shumway and Stoffer
+    - Reviewed Section 6.5
+    - As expected, the results still seem overly "wiggly" suggesting a need for greater control for a ratio between the two variances.
+2. Read sections 1.1 - 1.2 in DLMs with R
+3. Read section 2.3 in Bayesian Forecasting and Dynamic Models
+
+# Bayesian Forecasting and Dynamic Models
+
+# Dynamic Linear Models with R
+
+# Shumway and Stoffer
+
+
